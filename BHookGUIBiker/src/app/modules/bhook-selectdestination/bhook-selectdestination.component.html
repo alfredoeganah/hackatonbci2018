@@ -1,0 +1,16 @@
+<div>
+	<!--
+    TO GET A GOOGLE MAPS GEOCODING APIKEY: https://developers.google.com/maps/documentation/geocoding/start?hl=es-419
+  -->
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCeFB0ln65sbm4IeHkN7GPs7fJSQlZ3qFg&libraries=places" type="text/javascript"></script>
+  <script src="./assets/js/gmapsapi.js" type="text/javascript"></script>
+
+  <form #formLogin="ngForm">
+  <label for="bhook-reserva-gmapssearch">Ingrese la dirección de destino,fecha y hora deseadas para reservar estacionamiento</label>
+            <input size="100" id="bhook-reserva-gmapssearch" type="text" onfocus="initializeGoogleAPI()" size="50" placeholder="Ingrese una dirección" autocomplete="on" runat="server" />
+
+         
+        </form>
+
+
+</div>

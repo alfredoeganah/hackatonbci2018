@@ -7,5 +7,6 @@ export class BHookUser{
 	public age: number;
 	public gender: string;
 	public bike: string;
+	public useSSO:Boolean = false;
 }
 

@@ -17,6 +17,11 @@ export class BHookCRMService {
     validateRut(someRut: string ) {
         this.errorMsg = '';
         this.infoMsg = 'Validando rut...espere un momento por favor.';
+        if(someRut===undefined||someRut===''){
+            this.errorMsg = 'Por favor ingrese su rut!';
+            this.infoMsg = '';
+            return;
+        }
         const url = 'https://api.rutify.cl/rut/'+ someRut;
         console.log('BHook API REQUEST (validateRut)-> GET ' + url);
         return this._http.get(url).map(res => res.json()).subscribe(
@@ -28,7 +33,7 @@ export class BHookCRMService {
                 }else{ 
                     this.user.fullname = result.nombre;
                     this.validatedrut = true;
-                    this._router.navigate(['/createUser']);
+                    this._router.navigate(['/createUser'],{queryParams: {user: this.user }});
                 }
                 this.infoMsg = '';
             },
@@ -47,7 +52,7 @@ export class BHookCRMService {
             private _router: Router
         ) {
         this.validatedrut = false;
-        //this.user = new BHookUser();
+        this.user = new BHookUser();
         this.errorMsg = '';
         this.infoMsg = '';
     }

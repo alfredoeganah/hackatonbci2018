@@ -1,19 +1,33 @@
 <div>
 	<form #formLogin="ngForm">
 	<div style="font-weight: bold; font-size: 20px; background: lightgreen;">Bienvenido {{_BHookCrmService.user.fullname}}, a continuación seleccione un usuario y password, o seleccione una red social</div>
-	<div>
-		<label for="bhook-user-rut">Usuario</label>
-		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #rut="ngModel" [(ngModel)]="user.rut"/>
+	<div *ngIf="infoMsg!==''" style="font-weight: bold; background: yellow;">{{infoMsg}}</div>
+   	<div *ngIf="errorMsg!==''" style="font-weight: bold; background: red;">{{errorMsg}}</div>
+   	<div>
+		<label for="bhook-user-username">Usuario</label>
+		<input type="text" id="bhook-user-username" name="bhook-user-username" #username="ngModel" [(ngModel)]="user.username"/>
 	</div>
 	<div>
-		<label for="bhook-user-rut">Password</label>
-		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #rut="ngModel" [(ngModel)]="user.rut"/>
+		<label for="bhook-user-password">Password</label>
+		<input type="text" id="bhook-user-password" name="bhook-user-password" #password="ngModel" [(ngModel)]="user.password"/>
 	</div>
 	<div>
-		<button id="bhook-getrut-submit" (click)="validateRut($event)">Ingresar</button> 
+		<label for="bhook-user-fullname">Nombre Completo</label>
+		<input type="text" id="bhook-user-fullname" name="bhook-user-fullname" #fullname="ngModel" [(ngModel)]="user.fullname"/>
 	</div>
 	<div>
-		 <img alt="BHook Biker GUI" src="./assets/Branding/RRSS.jpeg" style="cursor: hoover;">
+		<label for="bhook-user-age">Edad</label>
+		<input type="number" id="bhook-user-age" name="bhook-user-age" #age="ngModel" [(ngModel)]="user.age"/>
 	</div>
-	</form>
+	<div>
+		<label for="bhook-user-gender">Género</label>
+		<input type="text" id="bhook-user-gender" name="bhook-user-rut" #gender="ngModel" [(ngModel)]="user.gender"/>
+	</div>
+	<div>
+		<button id="bhook-getrut-submit" (click)="goToSelectDestination($event,false)">Crear Usuario</button> 
+	</div>
+	<div>
+		 <img alt="BHook Biker GUI" src="./assets/Branding/RRSS.jpeg" (click)="goToSelectDestination($event,true)" style="cursor: pointer;">
+	</div>
+   	</form>
 </div>
