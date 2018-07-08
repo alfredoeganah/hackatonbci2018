@@ -14,7 +14,7 @@ export class BHookCreateUserComponent implements OnInit {
 
 	public user:BHookUser;
 
-   constructor( public _BHookCrmService: BHookCRMService, private _router: Router, private route: ActivatedRoute) {	}
+    constructor( public _BHookCrmService: BHookCRMService, private _router: Router, private route: ActivatedRoute) {	}
 
   
  	public infoMsg: string = '';
@@ -26,12 +26,11 @@ export class BHookCreateUserComponent implements OnInit {
 		}
 		else
 	   this.route
-	      .queryParams
+	      .queryParams 
 	      .subscribe(params => {
 	        this.user = params['user'] || new BHookUser();
 	      });
 	  }
-
 
 	goToSelectDestination(e:any,direct:Boolean){
 		let valid:Boolean = true;
@@ -48,10 +47,12 @@ export class BHookCreateUserComponent implements OnInit {
 			}
 		}
 		if(valid){
-			this._BHookCrmService.confirmHook();
+			//this._BHookCrmService.confirmHook();
 			this.user.useSSO = true;
-			//this._router.navigate(['/selectDestination'],{queryParams: {user: this.user }});
-			this._router.navigate(['/parkingDetail'],{queryParams: {user: this.user }});
+			this._BHookCrmService.validatedrut=false;
+			this._BHookCrmService.selectDestination=true;
+			this._router.navigate(['/selectDestination'],{queryParams: {user: this.user }});
+			//this._router.navigate(['/parkingDetail'],{queryParams: {user: this.user }});
 			}
 		}
 	}

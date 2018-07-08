@@ -8,5 +8,8 @@ export class BHookUser{
 	public gender: string;
 	public bike: string;
 	public useSSO:Boolean = false;
+	public destinationAdd:string='';
+	public destinationLat:String='';
+	public destinationLon:String='';
 }
 

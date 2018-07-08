@@ -12,9 +12,15 @@ export class BHookCRMService {
     public user: BHookUser;
     public infoMsg: string;
     public errorMsg: string;
+
+    //ROUTE STATE FLAGS
     public inicio: Boolean = true;
-    public validatedrut: Boolean;
+    public validatedrut: Boolean= false;
     public hookConfirmed:Boolean = false;
+    public selectDestination:Boolean = false;
+
+    public selectedLat:string;
+    public selectedLon:string;
     
     constructor(
             private _http: Http,
@@ -29,7 +35,7 @@ export class BHookCRMService {
     }
 
     ping() {
-        return 'BHookCRMService->pong()';
+        console.info('BHookCRMService->pong()');
     }
 
     validateRut(someRut: string ) {
@@ -64,8 +70,12 @@ export class BHookCRMService {
         );
     }
         
-    confirmHook(){
+    goToSelectDestination(){
         this.validatedrut = false;
+        this.selectDestination = true;
+    }
+    confirmHook(){
+        this.selectDestination = false;
         this.hookConfirmed = true;
     }
     
