@@ -1,0 +1,13 @@
+<div>
+	<form #formLogin="ngForm">
+	<div><h3>Bienvenido a BHook, por favor ingresa tu rut</h3></div>
+	<div>
+		<label for="bhook-user-rut">Rut</label>
+		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #userRut="ngModel" [(ngModel)]="login.userRut"/>
+	</div>
+	<div>
+		<button id="bhook-getrut-submit" (click)="doLogin($event)">Ingresar</button> 
+	</div>
+	<div>{{_BHook.errorMsg}}</div>
+	</form>
+</div>
