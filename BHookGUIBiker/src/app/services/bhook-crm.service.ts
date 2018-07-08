@@ -47,7 +47,7 @@ export class BHookCRMService {
             private _router: Router
         ) {
         this.validatedrut = false;
-        this.user = new BHookUser();
+        //this.user = new BHookUser();
         this.errorMsg = '';
         this.infoMsg = '';
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BHookCRMService } from '../../services/bhook-crm.service'
+import { RouterModule, Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'bhook-createuser',
@@ -15,5 +16,9 @@ export class BHookCreateUserComponent implements OnInit {
 
 	   constructor( public _BHookCrmService: BHookCRMService) { 
 	  
+	}
+
+	goToSelectDestination(){
+		this._router.navigate(['/createUser']);
 	}
 }
