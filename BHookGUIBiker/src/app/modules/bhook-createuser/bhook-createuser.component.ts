@@ -48,9 +48,10 @@ export class BHookCreateUserComponent implements OnInit {
 			}
 		}
 		if(valid){
+			this._BHookCrmService.confirmHook();
 			this.user.useSSO = true;
-			this._router.navigate(['/selectDestination'],{queryParams: {user: this.user }});
+			//this._router.navigate(['/selectDestination'],{queryParams: {user: this.user }});
+			this._router.navigate(['/parkingDetail'],{queryParams: {user: this.user }});
 			}
 		}
 	}
-	   

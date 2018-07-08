@@ -12,8 +12,26 @@ export class BHookCRMService {
     public user: BHookUser;
     public infoMsg: string;
     public errorMsg: string;
+    public inicio: Boolean = true;
     public validatedrut: Boolean;
-    public LoadingTarifa: Boolean;
+    public hookConfirmed:Boolean = false;
+    
+    constructor(
+            private _http: Http,
+            private _httpclient: HttpClient,
+            private _activeRoute: ActivatedRoute,
+            private _router: Router
+        ) {
+        this.validatedrut = false;
+        this.user = new BHookUser();
+        this.errorMsg = '';
+        this.infoMsg = '';
+    }
+
+    ping() {
+        return 'BHookCRMService->pong()';
+    }
+
     validateRut(someRut: string ) {
         this.errorMsg = '';
         this.infoMsg = 'Validando rut...espere un momento por favor.';
@@ -33,6 +51,7 @@ export class BHookCRMService {
                 }else{ 
                     this.user.fullname = result.nombre;
                     this.validatedrut = true;
+                    this.inicio = false;
                     this._router.navigate(['/createUser'],{queryParams: {user: this.user }});
                 }
                 this.infoMsg = '';
@@ -45,18 +64,12 @@ export class BHookCRMService {
         );
     }
         
-    constructor(
-            private _http: Http,
-            private _httpclient: HttpClient,
-            private _activeRoute: ActivatedRoute,
-            private _router: Router
-        ) {
+    confirmHook(){
         this.validatedrut = false;
-        this.user = new BHookUser();
-        this.errorMsg = '';
-        this.infoMsg = '';
+        this.hookConfirmed = true;
     }
-    ping() {
-        return 'BHookCRMService->pong()';
-    }
+    
+
+
+
 } 

@@ -1,7 +1,8 @@
 <div style="text-align:center">
   <img alt="BHook Biker GUI" src="./assets/Branding/Bhook.jpeg">
-  <bhook-getrut *ngIf="!_BHookCrmService.validatedrut">></bhook-getrut>
+  <bhook-getrut *ngIf="_BHookCrmService.inicio">></bhook-getrut>
   <bhook-createuser *ngIf="_BHookCrmService.validatedrut">></bhook-createuser>
+  <bhook-parkingdetail *ngIf="_BHookCrmService.hookConfirmed">></bhook-parkingdetail>
 </div>
 
 
