@@ -36,16 +36,16 @@ export class BHookCreateUserComponent implements OnInit {
 	goToSelectDestination(e:any,direct:Boolean){
 		let valid:Boolean = true;
 		if(!direct){
-			if(this.user.username === ''){
+			if(this.user.username === undefined || this.user.username === ''){
 				this.errorMsg = 'Por favor ingrese un usuario';
 				valid = false;
 				return;
-			} else this.user.username = this.username;
-			if(this.user.password === '') {
+			} 
+			if(this.user.password === undefined || this.user.password === '') {
 				this.errorMsg = 'Por favor ingrese una clave';
 				valid = false;
 				return;
-			}else this.user.password = this.password;
+			}
 		}
 		if(valid){
 			this.user.useSSO = true;
@@ -53,4 +53,4 @@ export class BHookCreateUserComponent implements OnInit {
 			}
 		}
 	}
-}
+	   
