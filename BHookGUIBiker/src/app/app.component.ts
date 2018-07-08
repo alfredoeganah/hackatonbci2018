@@ -7,7 +7,7 @@ import { BHookCRMService } from './services/bhook-crm.service'
 })
 export class AppComponent {
   title = 'BHook Comunidad Ciclista - Biker';
-   constructor( public _BHookCrmSerice: BHookCRMService) { 
+   constructor( public _BHookCrmService: BHookCRMService) { 
 	  
 	}
 }

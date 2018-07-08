@@ -1,5 +1,19 @@
 <div>
 	<form #formLogin="ngForm">
-	<div style="font-weight: bold; font-size: 20px; background: lightgreen;">Bienvenido {{_BHookCrmSerice.user.fullname}}, a continuación seleccione un usuario y password, o seleccione una red social</div>
+	<div style="font-weight: bold; font-size: 20px; background: lightgreen;">Bienvenido {{_BHookCrmService.user.fullname}}, a continuación seleccione un usuario y password, o seleccione una red social</div>
+	<div>
+		<label for="bhook-user-rut">Usuario</label>
+		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #rut="ngModel" [(ngModel)]="user.rut"/>
+	</div>
+	<div>
+		<label for="bhook-user-rut">Password</label>
+		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #rut="ngModel" [(ngModel)]="user.rut"/>
+	</div>
+	<div>
+		<button id="bhook-getrut-submit" (click)="validateRut($event)">Ingresar</button> 
+	</div>
+	<div>
+		 <img alt="BHook Biker GUI" src="./assets/Branding/RRSS.jpeg" style="cursor: hoover;">
+	</div>
 	</form>
 </div>

@@ -13,7 +13,7 @@ export class BHookCreateUserComponent implements OnInit {
 	  
 	  }
 
-	   constructor( public _BHookCrmSerice: BHookCRMService) { 
+	   constructor( public _BHookCrmService: BHookCRMService) { 
 	  
 	}
 }
