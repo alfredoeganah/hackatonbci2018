@@ -16,6 +16,9 @@ export class BHookSelectDestinationComponent implements OnInit {
     constructor( public _BHookCrmService: BHookCRMService, private _router: Router, private route: ActivatedRoute) {	}
 
 	public user:BHookUser;
+	public infoMsg: string = '';
+    public errorMsg: string = '';
+    
 	ngOnInit() {
 		if(this._BHookCrmService.user!==undefined){
 			this.user = this._BHookCrmService.user;
@@ -50,4 +53,4 @@ export class BHookSelectDestinationComponent implements OnInit {
 			this._router.navigate(['/selectParking'],{queryParams: {user: this.user }});
 			}
 		}
-}}
+}

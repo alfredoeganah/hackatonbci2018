@@ -3,11 +3,11 @@
   	<h3>Ingrese la dirección de destino,fecha y hora deseadas para reservar estacionamiento</h3>
   	<div>
     <label for="bhook-reserva-gmapssearch">Dirección Destino</label>
-	<input size="100" id="bhook-reserva-gmapssearch" type="text" onfocus="initializeGoogleAPI()" size="50" placeholder="Ingrese una dirección" autocomplete="on" runat="server" name="bhook-reserva-gmapssearch" #destinationAdd="ngModel" [(ngModel)]="user.destinationAdd" /><br/>
+	<input size="100" id="bhook-reserva-gmapssearch" type="text" onfocus="initializeGoogleAPI()" size="50" placeholder="Ingrese una dirección" autocomplete="on" runat="server" name="bhook-reserva-gmapssearch" #destinationAdd="ngModel" [(ngModel)]="user.destinationAdd" /><br/><br/>
 	<label for="bhook-destination-date">Fecha</label>
-	<input type="date" id="bhook-destination-date" name="bhook-destination-date" #date="ngModel" [(ngModel)]="user.date" /><br/>
+	<input type="date" id="bhook-destination-date" name="bhook-destination-date" #date="ngModel" [(ngModel)]="user.date" /><br/><br/>
 	<label for="bhook-destination-time">Hora</label>
-	<input type="time" id="bhook-destination-time" name="bhook-destination-time" #time="ngModel" [(ngModel)]="user.time" /><br/>
+	<input type="time" id="bhook-destination-time" name="bhook-destination-time" #time="ngModel" [(ngModel)]="user.time" /><br/><br/>
 	<input type="text" id="bhook-destination-latitude" name="bhook-destination-latitude" #destinationLat="ngModel" [(ngModel)]="user.destinationLat" hidden="hidden" />
 	<input type="text" id="bhook-destination-longitude" name="bhook-destination-longitude" #destinationLon="ngModel" [(ngModel)]="user.destinationLon" hidden="hidden" />
 </div>

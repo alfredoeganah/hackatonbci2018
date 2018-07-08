@@ -18,6 +18,8 @@ export class BHookCRMService {
     public validatedrut: Boolean= false;
     public hookConfirmed:Boolean = false;
     public selectDestination:Boolean = false;
+    public selectParking:Boolean = false;
+    public parkingDetail:Boolean = false;
 
     public selectedLat:string;
     public selectedLon:string;

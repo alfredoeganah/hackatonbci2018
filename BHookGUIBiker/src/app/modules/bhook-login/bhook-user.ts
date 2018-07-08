@@ -11,5 +11,6 @@ export class BHookUser{
 	public destinationAdd:string='';
 	public destinationLat:String='';
 	public destinationLon:String='';
+	public destinationUse:int;
 }
 

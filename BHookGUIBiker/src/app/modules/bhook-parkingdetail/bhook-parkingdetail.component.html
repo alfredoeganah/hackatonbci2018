@@ -1,14 +1,15 @@
 <div>
 	<form #formLogin="ngForm">
-	<div style="font-weight: bold; font-size: 20px; background: lightgreen;">Gracias {{_BHookCrmService.user.fullname}} tu reserva se ha confirmado, a continuación tienes la información de tu Reserva</div>
+	<div style="font-weight: bold; font-size: 20px; background: lightgray;">Gracias {{_BHookCrmService.user.fullname}} tu reserva se ha confirmado, a continuación tienes la información de tu Reserva</div><br/>
 	<div *ngIf="infoMsg!==''" style="font-weight: bold; background: yellow;">{{infoMsg}}</div>
    	<div *ngIf="errorMsg!==''" style="font-weight: bold; background: red;">{{errorMsg}}</div>
    	<div>
 		<label for="bhook-user-username">Código de Reserva</label>
-		<input type="text" id="bhook-user-username" name="bhook-user-username" #username="ngModel" readonly="readonly" [(ngModel)]="user.username" value="123456789" />
+		<input type="text"  readonly="readonly"  value="123456789" />
 	</div>
 	<div>
 		<img src='http://www.unitag.io/qreator/generate?crs=lN9VwHAzn44jpWA9cHxlIuPjqoiQb3bCeYOqJGIdcndrrofUfPzWxW1GGZpQzkhLsdh7B%252Bz7GhkwX5fPQYSju%252BuRm4%252B7B1PwG8jya0ktaCyx229WZDzag8cd%252FnCaaSo9ZE3W0o6M2XU5uOK85Fo%252FT1xMSZuPmq4sFg6TwTbO849gvuzgUDaSEtjBcbJihXqDbfG4DjCyKJzJIMtaUcu58mBQzuwg3yDqWvcWC5lqfQXIF4ggomsM%252Bpgyma2UcK4kZunSR0kJAg8vrZcAtQg%252F206YomMONH07Nzgpp3CSekJxIsc5AWBNtb7hY09R7C2IiB8aNhh%252BlXOZCNS8htOWahjiHdcPnmQLAI593eJR9yYJlpNY5UedkUpxOZgXBpyxd7y7MAtPGeK0z31%252FgshBHtuZat3DuBCuQbmchEK5ddf4098OlDNH%252BKg62Ryh0cE7&crd=fhOysE0g3Bah%252BuqXA7NPQyYUgh0uuXJx3SBBrHijFlutnFKqxrpn2Wug%252FafLpTzT' alt='QR Code'/>
 	</div>
    	</form>
+   	<div style="font-weight: bold; font-size: 20px; background: lightgray;">Ahora puedes acercarte a la sucursal en la fecha y hora reservada, no olvides presentar tu QR para poder acceder a tu Hook</div><br/>
 </div>
