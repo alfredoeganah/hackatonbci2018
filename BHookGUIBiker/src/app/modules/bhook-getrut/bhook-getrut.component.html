@@ -3,11 +3,17 @@
 	<div><h3>Bienvenido a BHook, por favor ingresa tu rut</h3></div>
 	<div>
 		<label for="bhook-user-rut">Rut</label>
-		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #userRut="ngModel" [(ngModel)]="login.userRut"/>
+		<input type="text" id="bhook-user-rut" name="bhook-user-rut" #rut="ngModel" [(ngModel)]="user.rut"/>
 	</div>
 	<div>
-		<button id="bhook-getrut-submit" (click)="doLogin($event)">Ingresar</button> 
+		<button id="bhook-getrut-submit" (click)="validateRut($event)">Ingresar</button> 
 	</div>
-	<div>{{_BHook.errorMsg}}</div>
+	<div style="align-content: center;">
+		<table>
+		<tr *ngIf="_BHookCrmSerice.infoMsg!==''"><td colspan="4" style="font-weight: bold; background: yellow;">{{_BHookCrmSerice.infoMsg}}</td></tr>
+	   	<tr *ngIf="_BHookCrmSerice.errorMsg!==''"><td colspan="4" style="font-weight: bold; background: red;">{{_BHookCrmSerice.errorMsg}}</td></tr>
+	   	<tr *ngIf="_BHookCrmSerice.validatedrut"><td colspan="4" style="font-weight: bold; font-size: 20px; background: lightgreen;">Bienvenido {{_BHookCrmSerice.user.fullname}}, a continuación seleccione un usuario y password, o seleccione una red social</td></tr>
+	   </table>
+	</div>
 	</form>
 </div>

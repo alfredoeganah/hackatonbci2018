@@ -15,6 +15,7 @@ import { BHookSelectParkingComponent } from './modules/bhook-selectparking/bhook
 import { BHookParkingDetailComponent } from './modules/bhook-parkingdetail/bhook-parkingdetail.component';
 import { BHookConfirmParkingComponent } from './modules/bhook-confirmparking/bhook-confirmparking.component';
 
+import { BHookCRMService} from './services/bhook-crm.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { BHookConfirmParkingComponent } from './modules/bhook-confirmparking/bho
     HttpModule,
     HttpClientModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders,BHookCRMService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

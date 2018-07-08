@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BHookCRMService } from '../../services/bhook-crm.service'
 
 @Component({
   selector: 'bhook-createuser',
@@ -11,4 +12,8 @@ export class BHookCreateUserComponent implements OnInit {
 	ngOnInit() {
 	  
 	  }
+
+	   constructor( public _BHookCrmSerice: BHookCRMService) { 
+	  
+	}
 }
